@@ -1,0 +1,231 @@
+:root {
+  --primary-gradient: linear-gradient(
+    115deg,
+    #e91e4d 0%,
+    #c8103b 55%,
+    #b80e38 100%
+  );
+  --primary-text-color: #fff;
+
+  --glass-effect-bg: rgb(255, 255, 255, 0.22);
+  --glass-effect-blur: blur(5px);
+  --glass-effect-border: 1px solid rgba(255, 255, 255, 0.37);
+  --glass-effect-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  --padding-sm: 8px;
+  --padding-md: 16px;
+  --padding-lg: 24px;
+
+  --margin-sm: 8px;
+  --margin-md: 16px;
+  --margin-lg: 24px;
+
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: 100vh;
+}
+
+.left-section {
+  padding: 100px;
+  background: var(--primary-gradient);
+  color: var(--primary-text-color);
+  height: 100%;
+}
+
+.section-badge {
+  background: var(--glass-effect-bg);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--glass-effect-shadow);
+  backdrop-filter: var(--glass-effect-blur);
+  border: var(--glass-effect-border);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+.page-heading {
+  font-size: 2rem;
+  margin: var(--margin-lg) 0;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.page-description {
+  letter-spacing: 0.5px;
+  line-height: 1.56;
+  margin-bottom: var(--margin-lg);
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  background: var(--glass-effect-bg);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--glass-effect-shadow);
+  backdrop-filter: var(--glass-effect-blur);
+  border: var(--glass-effect-border);
+  color: var(--primary-text-color);
+}
+
+.contact-info a {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  max-width: 500px;
+  transition: all 0.2s linear;
+}
+
+.envelope-icon,
+.phone-icon,
+.location-icon {
+  background: var(--glass-effect-bg);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--glass-effect-shadow);
+  backdrop-filter: var(--glass-effect-blur);
+  border: var(--glass-effect-border);
+  padding: var(--padding-sm);
+}
+
+.email-address, .phone-no, .address {
+    font-size: 1rem;
+}
+
+.contact-label {
+  font-size: 0.9rem;
+  color: rgb(226, 223, 223);
+}
+
+.social-links-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.social-link {
+  padding: 6px 8px;
+  border-radius: 50%;
+  transition: all 0.2s linear;
+}
+
+.contact-info a:hover,
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.right-section {
+  background: #000000;
+  color: var(--primary-text-color);
+  padding: 100px;
+}
+
+.form-heading {
+  font-size: 2rem;
+  margin-bottom: var(--margin-lg);
+}
+
+.name-group {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px 8px 8px 14px;
+  background-color: #161616;
+  color: rgb(183, 178, 178);
+  border: 1px solid gray;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  outline: none;
+  border: 1px solid #292929;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border: 1px solid crimson;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: darkgray;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.send-btn {
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 7px;
+  background: linear-gradient(115deg, #e91e4d 0%, #c8103b 55%, #b80e38 100%);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.send-btn:hover {
+  transform: translateY(-5px);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ed1748;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(237, 23, 72, 0.15);
+}
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .left-section,
+  .right-section {
+    padding: 60px;
+  }
+  .name-group {
+    display: block;
+  }
+}
+
+@media (max-width: 350px) {
+  .left-section,
+  .right-section {
+    padding: 30px;
+  }
+}
